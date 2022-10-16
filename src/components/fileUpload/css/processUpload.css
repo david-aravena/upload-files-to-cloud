@@ -1,0 +1,94 @@
+.containerProcessUpload{
+    width: 100vw;
+    height: 100vh;
+}
+
+.containerUploadMoreFiles{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+}
+
+.buttonUploadMoreFiles{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(250, 174, 51);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 16px;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.fileProgress{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgb(239, 239, 239);
+    margin-bottom: 1rem;
+    z-index: 1;
+    border: 1px solid rgb(201, 199, 199);
+    padding: 0 1rem;
+    margin-top: 1rem;
+}
+
+.percentUpload p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.fileProgress .progressbar{
+    width: 100%;
+}
+
+progress[value]{
+    width: 100%;
+    accent-color: rgb(250, 174, 51);
+}
+
+.info{
+    display: flex;
+    justify-content:space-between;
+    
+}
+
+.info .datas{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.fileProgress .info p,
+.containerLinkForDownload p{
+    padding: 5px 0;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(55, 55, 55);
+    font-weight: 300;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.fileProgress .info p span{
+    font-weight: 400;
+    
+}
+
+.linkForDownload{
+    padding: 0.5rem 0;
+}
+
+.containerLinkForDownload{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
