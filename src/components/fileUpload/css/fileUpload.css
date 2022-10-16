@@ -1,0 +1,60 @@
+.containerAddFiles{
+    width: 100vw;
+    height: 100vh;
+}
+
+.containerButtonSelectFiles{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerButtonSelectFiles p{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(55, 55, 55);
+    font-weight: 400;
+    padding-top: 1rem;
+}
+
+.containerButtonSelectFiles .buttonSelectFiles{
+    position: relative;
+    background-color: rgb(255, 157, 0);
+    padding: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.containerButtonSelectFiles .buttonSelectFiles:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgb(249, 202, 125);
+    z-index: -1;
+    opacity: 1;
+    border-radius: 50%;
+    animation: pulse 2s ease-out infinite;
+}
+
+.containerButtonSelectFiles .buttonSelectFiles .iconButtonSelectFiles{
+    color: rgb(128, 127, 127);
+}
+
+@keyframes pulse {
+    100%{
+        width: 250%;
+        height: 250%;
+        opacity: 0;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
