@@ -1,0 +1,56 @@
+.containerListFilesSelected{
+    width: 100vw;
+    height: 100vh;
+}
+
+.file{
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(239, 239, 239);
+    margin-bottom: 1rem;
+    z-index: 1;
+    padding-left: 1rem;
+    border: 1px solid rgb(201, 199, 199);
+}
+
+.file .fileInfo{
+    width: 100%;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.file .fileInfo p{
+    padding: 5px 0;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(55, 55, 55);
+    font-weight: 300;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    
+}
+
+.file .fileInfo p span{
+    font-weight: 400;
+}
+
+.file .containerCloseButton{
+    display: flex;
+    align-items:flex-start;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.file .containerCloseButton button{
+    font-size: 2rem;
+    border-radius: 10px;
+    background-color: rgb(250, 174, 51);
+    cursor: pointer;
+    padding: 0 0.5rem;
+    border: 1px solid rgb(201, 199, 199);
+    color: rgb(85, 84, 84);
+    font-size: 1.5rem;
+}
