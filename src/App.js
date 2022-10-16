@@ -4,9 +4,7 @@ import {FileUpload} from './components/fileUpload/FileUpload'
 function App() {
   return (
     <div className="App">
-      <FileUpload>
-
-      </FileUpload>
+      <FileUpload />
     </div>
   );
 }
