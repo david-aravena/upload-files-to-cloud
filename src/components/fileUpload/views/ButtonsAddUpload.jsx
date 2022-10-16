@@ -1,6 +1,6 @@
 import './../css/buttonsAddSend.css';
 
-export const ButtonsAddUpload = ({children, getFilesFromInput}) => {
+export const ButtonsAddUpload = ({children, getFilesFromInput, uploadFiles}) => {
     return(
         <>
             <div className="containerButtons">
@@ -8,7 +8,7 @@ export const ButtonsAddUpload = ({children, getFilesFromInput}) => {
                     <input type="file" multiple onChange={getFilesFromInput} />
                     {children[0]}
                 </label>
-                <button className="buttons" /*</div>onClick={functions.uploadFiles}*/>
+                <button className="buttons" onClick={uploadFiles}>
                     {children[1]}
                 </button>
             </div>
