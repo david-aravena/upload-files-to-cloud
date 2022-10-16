@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import {SelectionFile} from './views/SelectionFile'
-import {HiFolderAdd} from 'react-icons/hi';
 import {ListSelectionFile} from './views/ListSelectionFile'
+import {ButtonsAddUpload} from './views/ButtonsAddUpload'
+import { MdOutlineUploadFile } from 'react-icons/md';
+import {HiFolderAdd} from 'react-icons/hi';
 
 
 
@@ -24,17 +26,21 @@ export const FileUpload = () => {
     return(
         <>
             {filesSelected.length === 0 && 
-                <SelectionFile>
-                    <label className="buttonSelectFiles">
-                        <input type="file" multiple onChange={getFilesFromInput} />
-                        <HiFolderAdd size={"5rem"} className="iconButtonSelectFiles" />
-                    </label>
+                <SelectionFile getFilesFromInput={getFilesFromInput}>
+                    <HiFolderAdd size={"5rem"} className="iconButtonSelectFiles" />
                     <p>Seleccionar archivos para subir</p>
                 </SelectionFile>
             }
 
             {filesSelected.length > 0 &&
-                <ListSelectionFile filesSelected={filesSelected} deleteFileSelected={deleteFileSelected} />
+                <>
+                    <ButtonsAddUpload getFilesFromInput={getFilesFromInput}>
+                        <HiFolderAdd size={"3rem"} className="iconButtonSelectFiles" />
+                        <MdOutlineUploadFile size={"3rem"} className="iconAnimatedUpload" />
+                    </ButtonsAddUpload>
+
+                    <ListSelectionFile filesSelected={filesSelected} deleteFileSelected={deleteFileSelected} />
+                </>
             }
         </>
     )

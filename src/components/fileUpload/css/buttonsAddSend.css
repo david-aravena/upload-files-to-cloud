@@ -1,0 +1,62 @@
+.containerButtons{
+    width: 100vw;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.containerButtons .buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(250, 174, 51);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 16px;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.containerButtons .buttons p{
+    color: rgb(95, 95, 95);
+    font-weight: 500;
+}
+
+@media (max-width: 450px) {
+   
+}
+
+.iconButtonSelectFiles{
+    color: rgb(255, 239, 60);
+    fill: rgb(113, 113, 113);
+}
+
+.containerButtons .buttons .iconAnimatedUpload{
+    color: rgb(95, 95, 95);
+    animation: slide 2s linear infinite;
+}
+
+@keyframes slide{
+    0%{
+        transform: translateY(50px);
+    }
+    12.5%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    75%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100px);
+    }
+}
