@@ -6,7 +6,7 @@ import { MdOutlineUploadFile } from 'react-icons/md';
 import {HiFolderAdd} from 'react-icons/hi';
 import {sendFilesToStorage} from './../../serverless/serverlessMethods'
 import {ProcessUpload} from './views/ProcessUpload'
-
+import {ListSavedFiles} from './views/ListSavedFiles'
 
 
 export const FileUpload = () => {
@@ -14,7 +14,6 @@ export const FileUpload = () => {
     const [filesSelected, setFilesSelected] = useState([]);
     const [uploadFilesProgress, setUploadFilesProgress] = useState(null);
     const [linksForDownload, setLinksForDownload] = useState([])
-
 
     const getFilesFromInput = (e) => {
         const filesFromInput = e.target.files;
@@ -28,7 +27,6 @@ export const FileUpload = () => {
     }
 
     const uploadFiles = () => {
-        console.log("upload files")
         sendFilesToStorage(filesSelected, setUploadFilesProgress, setLinksForDownload)
     }
     
@@ -62,6 +60,9 @@ export const FileUpload = () => {
                         </>
                     }
                 </>
+            }
+            {linksForDownload.length === filesSelected.length &&
+                <ListSavedFiles linksForDownload={linksForDownload} />        
             }
         </>
     )
