@@ -1,0 +1,54 @@
+.containerList{
+    width: 100vw;
+}
+
+.fileInList{
+    width: 95%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: rgb(239, 239, 239);
+    z-index: 1;
+    padding-left: 1rem;
+    border: 1px solid rgb(201, 199, 199);
+}
+
+.fileInList .fileInfo{
+    width: 100%;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.fileInList .fileInfo p{
+    padding: 5px 0;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(55, 55, 55);
+    font-weight: 300;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    
+}
+
+.fileInList .fileInfo p span{
+    font-weight: 400;
+}
+
+.fileInList .containerButtons{
+    width: 100%;
+    padding-right: 0.5rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.fileInList .containerButtons button{
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background-color: rgb(250, 174, 51);
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 1px solid rgb(201, 199, 199);
+    color: rgb(85, 84, 84);
+    white-space: nowrap;
+}
