@@ -1,3 +1,3 @@
 export const sendEmail = async (link) => {
-    console.log("send EMAIL: "+link.link)
+    //fetch para enviar correo
 }

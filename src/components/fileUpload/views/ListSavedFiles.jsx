@@ -20,10 +20,10 @@ export const ListSavedFiles = ({linksForDownload}) => {
                     <div className="fileInList" key={index}>
                         <div className="fileInfo">
                                 <p><span>Archivo</span>: {link.nameFile}</p>
-                                <p><span>Link</span>:  {link.link} </p>
+                                <a href={link.link} target="blank">link de descarga</a>
                         </div>
                         <div className="containerButtons">
-                            <button onClick={() => sendEmail(link)}>
+                            <button onClick={() => alert("El boton para enviar el correo aun no esta habilitado :)")}>
                                 <RiMailSendLine size={"2rem"}/>
                             </button>
                         </div>
