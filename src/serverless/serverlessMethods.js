@@ -24,7 +24,7 @@ export const sendFilesToStorage = (files, setUploadFilesProgress, setLinksDownlo
         () => {
             getDownloadURL(uploadTask.snapshot.ref).then(async (url) => {
                 console.log("get download")
-                const objeto = {link: url, nameFile: uploadTask.snapshot.ref.name}
+                const objeto = {link: url, namefile: uploadTask.snapshot.ref.name}
                 filesUpload.push(objeto);
                 setLinksDownload([...filesUpload])
             })

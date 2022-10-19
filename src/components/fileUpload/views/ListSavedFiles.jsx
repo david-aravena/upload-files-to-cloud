@@ -23,7 +23,7 @@ export const ListSavedFiles = ({linksForDownload}) => {
                                 <a href={link.link} target="blank">link de descarga</a>
                         </div>
                         <div className="containerButtons">
-                            <button onClick={() => alert("El boton para enviar el correo aun no esta habilitado :)")}>
+                            <button onClick={() => {sendEmail(link).then((result) => console.log("resultadito "+result)).catch((error) => console.log("el errorsito es "+error.message))}}>
                                 <RiMailSendLine size={"2rem"}/>
                             </button>
                         </div>
