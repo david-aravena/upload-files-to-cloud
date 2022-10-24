@@ -10,8 +10,8 @@
 
 # production
 /build
-/functions
-/src/serverless/serverlessConfig.js
+functions/
+src/serverless/serverlessConfig.js
 
 # misc
 .DS_Store
