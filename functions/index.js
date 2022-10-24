@@ -13,21 +13,26 @@ const transport = nodemailer.createTransport({
 const sendContactForm = (form) => {
     return transport
         .sendMail({
-            subject: "ha funcional el mail",
-            bcc:["daravenap1@gmail.com"],
-            html: `<h2>${form.link}</H2>`,
+            subject: "Ha recibido un correo de David Aravena Programador web",
+            bcc:[`${form.email}`],
+            html: `
+            <h3>Este es el link para descargar el archivo subido a la version beta de upload-test web app</H3>
+            <h4>${form.link}</H4>
+            <h3>Gracias por probar esta web de 'David Aravena' Programador Web</H3>
+            `,
         })
         .then((r) => {
-            console.log("mail exitoso", r.accepted)
-            console.log("rejected => ", r.rejected)
+            return true
         })
-        .catch((e) => console.log(e))
+        .catch((e) => {
+            return false
+        })
 }
 
 exports.helloWorld = functions.https.onRequest((request, response) => {
     cors(request, response, () => {
-        sendContactForm(request.body);
-        // response.set('Access-Control-Allow-Origin', '*');
-        // response.json(request.body);
+        sendContactForm(request.body).then((result) => {
+            response.send(result);
+        })
     })
 })

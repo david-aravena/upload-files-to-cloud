@@ -5,7 +5,6 @@ const storage = getStorage(app);
 
 export const sendFilesToStorage = (files, setUploadFilesProgress, setLinksDownload) => {
     /* esto hay que refactorizarlo entero */
-    console.log("send files to storage")
     let progressUploadFiles = {}
     let filesUpload = []
     for(let i in files){
@@ -23,7 +22,6 @@ export const sendFilesToStorage = (files, setUploadFilesProgress, setLinksDownlo
         },
         () => {
             getDownloadURL(uploadTask.snapshot.ref).then(async (url) => {
-                console.log("get download")
                 const objeto = {link: url, namefile: uploadTask.snapshot.ref.name}
                 filesUpload.push(objeto);
                 setLinksDownload([...filesUpload])

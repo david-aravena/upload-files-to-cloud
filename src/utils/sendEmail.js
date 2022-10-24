@@ -1,4 +1,5 @@
 export const sendEmail = async (link) => {
+    const mail = prompt("escriba su mail para enviarle el link")
     try{
         const result = await fetch(
             'https://us-central1-upload-test-28989.cloudfunctions.net/helloWorld/',
@@ -7,10 +8,10 @@ export const sendEmail = async (link) => {
                 headers:{
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(link)
+                body: JSON.stringify({email: mail, ...link})
             }
         )
-        return true
+        return 
     }catch(error){
         return error;
     }
