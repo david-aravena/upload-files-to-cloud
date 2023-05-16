@@ -2,8 +2,6 @@ import { useState } from 'react';
 import {SelectionFile} from './views/SelectionFile'
 import {ListSelectionFile} from './views/ListSelectionFile'
 import {ButtonsAddUpload} from './views/ButtonsAddUpload'
-import { MdOutlineUploadFile } from 'react-icons/md';
-import {HiFolderAdd} from 'react-icons/hi';
 import {sendFilesToStorage} from './../../serverless/serverlessMethods'
 import {ProcessUpload} from './views/ProcessUpload'
 import {ListSavedFiles} from './views/ListSavedFiles'
@@ -32,38 +30,31 @@ export const FileUpload = () => {
     
     return(
         <>
-            {filesSelected.length === 0 && 
-                <SelectionFile getFilesFromInput={getFilesFromInput}>
-                    <HiFolderAdd size={"5rem"} className="iconButtonSelectFiles" />
-                    <p>Seleccionar archivos para subir</p>
-                </SelectionFile>
-            }
+            {filesSelected.length === 0 && (
+                <SelectionFile getFilesFromInput={getFilesFromInput} />
+            )}
 
-            {filesSelected.length > 0 &&
+            {filesSelected.length > 0 && (
                 <>
-                    {!uploadFilesProgress ?
+                    {!uploadFilesProgress ? (
                         <>
-                            <ButtonsAddUpload getFilesFromInput={getFilesFromInput} uploadFiles={uploadFiles}>
-                                <HiFolderAdd size={"3rem"} className="iconButtonSelectFiles" />
-                                <MdOutlineUploadFile size={"3rem"} className="iconAnimatedUpload" />
-                            </ButtonsAddUpload>
-                            
+                            <ButtonsAddUpload getFilesFromInput={getFilesFromInput} uploadFiles={uploadFiles} />   
                             <ListSelectionFile filesSelected={filesSelected} deleteFileSelected={deleteFileSelected} />
                         </>
-                    :
-                        <>
-                            <ProcessUpload 
-                                uploadFilesProgress={uploadFilesProgress} 
-                                filesSelected={filesSelected} 
-                                linksForDownload={linksForDownload} 
-                            />
-                        </>
-                    }
+                    ) : (
+                        <ProcessUpload 
+                        uploadFilesProgress={uploadFilesProgress} 
+                        filesSelected={filesSelected} 
+                        linksForDownload={linksForDownload} 
+                        />
+                    )}
                 </>
-            }
-            {linksForDownload.length === filesSelected.length &&
+            )}
+
+            {linksForDownload.length === filesSelected.length && (
                 <ListSavedFiles linksForDownload={linksForDownload} />        
-            }
+            )}
         </>
+
     )
 }

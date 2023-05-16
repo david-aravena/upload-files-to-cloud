@@ -1,16 +1,17 @@
+import {HiFolderAdd} from 'react-icons/hi';
 import './../css/fileUpload.css'
 
 
-export const SelectionFile = ({children, getFilesFromInput}) => {
+export const SelectionFile = ({getFilesFromInput}) => {
     
     return(
         <div className="containerAddFiles">
             <div className="containerButtonSelectFiles">
                 <label className="buttonSelectFiles">
                     <input type="file" multiple onChange={getFilesFromInput} />
-                    {children[0]}
+                    <HiFolderAdd size={"5rem"} className="iconButtonSelectFiles" />
                 </label>
-                {children[1]}
+                <p>Seleccionar archivos para subir</p>
             </div>
         </div>
     )
