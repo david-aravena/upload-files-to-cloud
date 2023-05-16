@@ -61,7 +61,7 @@ progress[value]{
     
 }
 
-.info .datas{
+.info .data-file{
     overflow:hidden;
     white-space:nowrap;
     text-overflow: ellipsis;
@@ -83,7 +83,7 @@ progress[value]{
     
 }
 
-.linkForDownload{
+.linksForDownload{
     padding: 0.5rem 0;
 }
 
